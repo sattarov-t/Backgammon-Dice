@@ -32,6 +32,14 @@ class ViewController: UIViewController {
         return imageView
     }()
     
+    let jackpotView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "jackpot")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     let diceOne: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -66,6 +74,8 @@ class ViewController: UIViewController {
         
         if diceOne.image == diceTwo.image {
             playSoundWin()
+            showImage()
+            hideImage()
         } else {
             playSound()
         }
@@ -83,7 +93,22 @@ class ViewController: UIViewController {
         player.play()
     }
     
-
+    func showImage() {
+        jackpotView.isHidden = false
+        UIView.animate(withDuration: 3.0, animations: {
+            self.jackpotView.alpha = 1.0
+        })
+    }
+    
+    func hideImage() {
+        UIView.animate(withDuration: 3.0, animations: {
+            self.jackpotView.alpha = 0.0
+        }) { _ in
+            self.jackpotView.isHidden = true
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -98,6 +123,15 @@ class ViewController: UIViewController {
         logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
         logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        
+        view.addSubview(jackpotView)
+        jackpotView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 15).isActive = true
+        jackpotView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        jackpotView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        jackpotView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        jackpotView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        jackpotView.isHidden = true
         
         
         view.addSubview(diceOne)
@@ -121,7 +155,7 @@ class ViewController: UIViewController {
         
         
     }
-
-
+    
+    
 }
 
