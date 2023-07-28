@@ -2,6 +2,8 @@
 
 Our app provides a convenient and interactive way to roll dice for your Backgammon game. No more searching for physical dice or worrying about possible biases – simply open the app and start playing!
 
+![Alt Text](https://github.com/sattarov-t/Backgammon-Dice/blob/main/mock.jpg?raw=true)
+
 **Key Features of the app:**
 
 1. Intuitive Interface: A simple and user-friendly interface allows you to quickly grasp all the app's functionalities.
@@ -13,3 +15,5 @@ Our app provides a convenient and interactive way to roll dice for your Backgamm
 4. Great Graphics: The app is designed with a pleasant and modern interface, making the gaming experience even more enjoyable and engaging.
 
 5. Quick Access: Download the app on your device and play anytime, anywhere – all you need is access to your smartphone.
+
+![Alt Text](https://github.com/sattarov-t/Backgammon-Dice/blob/main/app.gif?raw=true)
